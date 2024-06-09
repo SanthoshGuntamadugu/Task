@@ -1,0 +1,5 @@
+com\example\loginapp\entity\User.class
+com\example\loginapp\config\SecurityConfig.class
+com\example\loginapp\repository\UserRepository.class
+com\example\loginapp\LoginAppApplication.class
+com\example\loginapp\controller\LoginController.class
