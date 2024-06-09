@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+        }
+        th, td {
+            border: 1px solid rgb(128, 255, 128);
+            padding: 4px 8px;
+            text-align: left;
+        }
+        th {
+            background-color: rgb(255, 255, 128);
+        }
+        h1, h2 {
+            margin: 7px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <h2>Table1</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+        </tr>
+        <tr th:each="row : ${table1Data}">
+            <td th:text="${row.id}"></td>
+            <td th:text="${row.data}"></td>
+        </tr>
+    </table>
+
+    <h2>Table2</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+        </tr>
+        <tr th:each="row : ${table2Data}">
+            <td th:text="${row.id}"></td>
+            <td th:text="${row.data}"></td>
+        </tr>
+    </table>
+
+    <h2>Table3 (Merged)</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+        </tr>
+        <tr th:each="row : ${table3Data}">
+            <td th:text="${row.id}"></td>
+            <td th:text="${row.data}"></td>
+        </tr>
+    </table>
+
+    <form action="/merge" method="post"></form> <br/>
+        <button type="submit">Merge Tables</button>
+    </form>
+</body>
+</html>
